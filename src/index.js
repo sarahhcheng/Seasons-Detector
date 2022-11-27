@@ -23,13 +23,18 @@ class App extends React.Component {
   }
   // React says we have to define render
   render() {
-    return (
-      <div>
-        Latitude: {this.state.lat} <br />
-        Longitude: {this.state.long} <br />
-        Error: {this.state.errorMessage}
-      </div>
-    );
+    if (
+      (this.state.errorMessage && !this.state.lat) ||
+      (this.state.errorMessage && !this.state.long)
+    ) {
+      return <div>Error: {this.state.errorMessage} </div>;
+    } else if (!this.state.errorMessage && this.state.lat && this.state.long) {
+      return (
+        <div>
+          Latitude: {this.state.lat} <br /> Longitude: {this.state.long}
+        </div>
+      );
+    }
   }
 }
 
