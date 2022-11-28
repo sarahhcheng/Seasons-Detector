@@ -32,9 +32,9 @@ const SeasonDisplay = (props) => {
   console.log(season);
   return (
     <div>
-      <i className={`${val["icon"]} icon`} />
+      <i className={`massive ${val["icon"]} icon`} />
       <h1>{val["text"]} </h1>
-      <i className={`${val["icon"]} icon`} />
+      <i className={`massive ${val["icon"]} icon`} />
     </div>
   );
 };
