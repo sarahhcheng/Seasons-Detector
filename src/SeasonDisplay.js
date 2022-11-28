@@ -32,7 +32,7 @@ const seasonConfig = {
 
   fall: {
     text: "It is nice outside.",
-    // icon:
+    icon: "leaf",
   },
 
   winter: {

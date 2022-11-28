@@ -32,3 +32,20 @@
 .winter {
   background-color: aliceblue;
 }
+
+.fall {
+  background-color: darksalmon;
+  color: white;
+}
+
+.fall i {
+  color: burlywood;
+}
+
+.spring {
+  background-color: lightskyblue;
+}
+
+.spring i {
+  color: lightgreen;
+}
