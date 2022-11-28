@@ -22,7 +22,7 @@ const getSeason = (lat, month) => {
 const seasonConfig = {
   spring: {
     text: "Flowers are blooming right now!",
-    // icon
+    icon: "leaf",
   },
 
   summer: {
