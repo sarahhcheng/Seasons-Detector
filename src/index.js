@@ -6,22 +6,38 @@ class App extends React.Component {
     super(props);
 
     this.state = { lat: null, long: null, errorMessage: "" };
+  }
 
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      (position) => {
+      (position) =>
         this.setState({
           lat: position.coords.latitude,
           long: position.coords.longitude,
-        });
-      },
-      (err) => {
+        }),
+      (err) =>
         this.setState({
           errorMessage: err.message,
-        });
-      }
+        })
     );
   }
+
+  //   componentDidUpdate() {
+  //     console.log("My component was just updated - it rerendered!");
+  //   }
+
+  //   // Good for data loading and grabbing information one time
+  //   componentDidMount() {}
+
+  //   // Good for data loading when state/props change
+  //   // E.g. making a network request everytime a user clicks a button
+  //   componentDidUpdate() {}
+
+  //   // Used anytime we remove a component from the screen and need to do cleanup after
+  //   componentWillUnmount() {}
+
   // React says we have to define render
+  // This is only for returning JSX
   render() {
     if (
       (this.state.errorMessage && !this.state.lat) ||
@@ -35,6 +51,7 @@ class App extends React.Component {
         </div>
       );
     }
+    return <div>Loading!</div>;
   }
 }
 
