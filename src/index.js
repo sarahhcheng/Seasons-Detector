@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SeasonDisplay from "./SeasonDisplay";
 
 // THIS IS THE ONLY TIME we do direct assigment
 // to this.state
-// class App extends React.Component {
+class App extends React.Component {
   //   constructor(props) {
   //     super(props);
 
@@ -49,11 +50,7 @@ import ReactDOM from "react-dom";
     ) {
       return <div>Error: {this.state.errorMessage} </div>;
     } else if (!this.state.errorMessage && this.state.lat && this.state.long) {
-      return (
-        <div>
-          Latitude: {this.state.lat} <br /> Longitude: {this.state.long}
-        </div>
-      );
+      return <SeasonDisplay lat={this.state.lat} />;
     }
     return <div>Loading!</div>;
   }
