@@ -2,17 +2,37 @@ import "./SeasonDisplay.css";
 import React from "react";
 
 const getSeason = (lat, month) => {
-  if (month < 3 && month > 8) {
+  if (month === 12 || month < 2) {
     return lat > 0 ? "winter" : "summer";
-  } else {
+  } else if (month >= 2 && month < 5) {
+    return lat > 0 ? "spring" : "fall";
+  } else if (month >= 5 && month < 9) {
     return lat > 0 ? "summer" : "winter";
+  } else {
+    return lat > 0 ? "fall" : "spring";
   }
+
+  // if (month < 3 && month > 8) {
+  //   return lat > 0 ? "winter" : "summer";
+  // } else {
+  //   return lat > 0 ? "summer" : "winter";
+  // }
 };
 
 const seasonConfig = {
+  spring: {
+    text: "Flowers are blooming right now!",
+    // icon
+  },
+
   summer: {
     text: "Wow it is hot!",
     icon: "sun",
+  },
+
+  fall: {
+    text: "It is nice outside.",
+    // icon:
   },
 
   winter: {
