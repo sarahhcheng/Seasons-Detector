@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
 import Loader from "./Loader";
+import "./style/App.css";
 
 // THIS IS THE ONLY TIME we do direct assigment
 // to this.state
@@ -44,7 +45,7 @@ class App extends React.Component {
 
   // React says we have to define render
   // This is only for returning JSX
-  render() {
+  renderContent() {
     if (
       (this.state.errorMessage && !this.state.lat) ||
       (this.state.errorMessage && !this.state.long)
@@ -53,7 +54,11 @@ class App extends React.Component {
     } else if (!this.state.errorMessage && this.state.lat && this.state.long) {
       return <SeasonDisplay lat={this.state.lat} />;
     }
-    return <Loader />;
+    return <Loader message="Please accept message request" />;
+  }
+
+  render() {
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
